@@ -4,7 +4,6 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.net.ConnectivityManager
-import io.reactivex.Single
 
 class TopRatedMoviesWidgetProvider: AppWidgetProvider() {
 
