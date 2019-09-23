@@ -21,6 +21,13 @@
             </intent-filter>
         </activity>
 
+        <!-- Declare "Top Rated Movies" widget here -->
+
+        <!-- Declare "Top Rated Movies" remote views service here -->
+
+        <!-- Declare "Movie Details" widget here -->
+
+        <!-- Declare "Movie Details" Configuration Activity here -->
     </application>
 
 </manifest>
