@@ -16,9 +16,9 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/title_text_size"
             android:text="@string/top_rated_movies_widget_title"
-            android:textColor="@color/colorAccent"
             android:maxLines="1"
             android:ellipsize="end"
+            android:textColor="@android:color/black"
             android:layout_marginTop="@dimen/normal_margin"
             android:layout_marginStart="@dimen/normal_margin"
             android:layout_marginBottom="@dimen/normal_margin"/>
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/normal_text_size"
-            android:textColor="@color/colorAccent"
+            android:textColor="@android:color/black"
             android:layout_gravity="center"
             android:text="@string/no_network_message"/>
     </FrameLayout>
