@@ -8,7 +8,7 @@ import io.reactivex.Single
 
 class TopRatedMoviesWidgetProvider: AppWidgetProvider() {
 
-    override fun onUpdate(context: Context?, appWidgetManager: AppWidgetManager?, appWidgetIds: IntArray?) {
+    override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
 
     }
 
@@ -20,10 +20,9 @@ class TopRatedMoviesWidgetProvider: AppWidgetProvider() {
 
     //TODO: replace with setListItemClick method
 
-    private fun hasNetworkConnection(context: Context): Single<Boolean> =
-        Single.fromCallable {
-            val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            val activeNetwork = cm.activeNetworkInfo
-            activeNetwork != null && activeNetwork.isConnectedOrConnecting
-        }
+    private fun hasNetworkConnection(context: Context): Boolean {
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork = cm.activeNetworkInfo
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting
+    }
 }

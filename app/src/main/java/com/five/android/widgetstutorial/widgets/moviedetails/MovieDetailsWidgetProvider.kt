@@ -6,11 +6,11 @@ import android.content.Context
 
 class MovieDetailsWidgetProvider : AppWidgetProvider() {
 
-    override fun onUpdate(context: Context?, appWidgetManager: AppWidgetManager?, appWidgetIds: IntArray?) {
+    override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
 
     }
 
-    override fun onDeleted(context: Context?, appWidgetIds: IntArray?) {
+    override fun onDeleted(context: Context, appWidgetIds: IntArray) {
 
     }
 
