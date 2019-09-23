@@ -9,6 +9,11 @@ import com.five.android.widgetstutorial.domain.usecases.GetTopRatedMoviesUseCase
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.koinApplication
 
+private const val MAX_MOVIES = 20
+private const val IMAGE_SIZE = 256
+
+private const val BASE_IMAGE_ULR = "https://image.tmdb.org/t/p/w500/"
+
 class TopRatedMoviesWidgetRemoteViewsFactory(private val context: Context): RemoteViewsService.RemoteViewsFactory {
 
     private val localKoin = koinApplication {
