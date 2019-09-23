@@ -16,6 +16,8 @@ import kotlinx.android.synthetic.main.activity_movie_details_widget_configuratio
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.koinApplication
 
+private const val BASE_IMAGE_ULR = "https://image.tmdb.org/t/p/w500/"
+
 class MovieDetailsConfigurationActivity: AppCompatActivity() {
 
     private val localKoin = koinApplication {
