@@ -21,6 +21,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".widgets.topratedmovies.MovieDetailsActivity"/>
+
         <!-- Declare "Top Rated Movies" widget here -->
 
         <!-- Declare "Top Rated Movies" remote views service here -->
