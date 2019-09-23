@@ -1,5 +1,8 @@
 package com.five.android.widgetstutorial.widgets.moviedetails
 
+import android.app.Activity
+import android.appwidget.AppWidgetManager
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +11,7 @@ import com.five.android.widgetstutorial.R
 import com.five.android.widgetstutorial.di.appModule
 import com.five.android.widgetstutorial.domain.models.TopRatedMovie
 import com.five.android.widgetstutorial.domain.usecases.GetTopRatedMoviesUseCase
+import com.five.android.widgetstutorial.preferences.Preferences
 import com.five.android.widgetstutorial.widgets.moviedetails.adapter.MoviesAdapter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -58,6 +62,26 @@ class MovieDetailsConfigurationActivity: AppCompatActivity() {
     }
 
     private fun onMovieSelected(topRatedMovie: TopRatedMovie) {
-        TODO("Replace this line")
+        val appWidgetId = intent?.extras?.getInt(
+            AppWidgetManager.EXTRA_APPWIDGET_ID,
+            AppWidgetManager.INVALID_APPWIDGET_ID
+        ) ?: AppWidgetManager.INVALID_APPWIDGET_ID
+
+        if (AppWidgetManager.INVALID_APPWIDGET_ID == appWidgetId) finish()
+
+        val appWidgetManager = AppWidgetManager.getInstance(this)
+
+        Preferences(this).apply {
+            setMovieTitleWidget(appWidgetId, topRatedMovie.originalTitle)
+            setMoviePosterUlr(appWidgetId, BASE_IMAGE_ULR + topRatedMovie.posterPath.removePrefix("/"))
+        }
+
+        MovieDetailsWidgetProvider.updatedAppWidget(this, appWidgetManager, appWidgetId)
+
+        val resultValue = Intent().apply {
+            putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
+        }
+        setResult(Activity.RESULT_OK, resultValue)
+        finish()
     }
 }

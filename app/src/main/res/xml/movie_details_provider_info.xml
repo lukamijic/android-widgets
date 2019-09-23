@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialKeyguardLayout="@layout/widget_movie_details"
+    android:initialLayout="@layout/widget_movie_details"
+    android:minWidth="180dp"
+    android:minHeight="180dp"
+    android:resizeMode="horizontal|vertical"
+    android:updatePeriodMillis="86400000"
+    android:configure="com.five.android.widgetstutorial.widgets.moviedetails.MovieDetailsConfigurationActivity"
+    android:widgetCategory="home_screen">
+</appwidget-provider>
