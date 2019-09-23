@@ -6,6 +6,6 @@ import android.widget.RemoteViewsService
 class TopRatedMoviesWidgetRemoteViewsService: RemoteViewsService() {
 
     override fun onGetViewFactory(intent: Intent?): RemoteViewsFactory {
-        TODO("Replace this line")
+        return TopRatedMoviesWidgetRemoteViewsFactory(applicationContext)
     }
 }

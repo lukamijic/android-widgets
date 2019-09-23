@@ -24,8 +24,19 @@
         <activity android:name=".widgets.topratedmovies.MovieDetailsActivity"/>
 
         <!-- Declare "Top Rated Movies" widget here -->
+        <receiver android:name=".widgets.topratedmovies.TopRatedMoviesWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
 
-        <!-- Declare "Top Rated Movies" remote views service here -->
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/top_rated_movies_provider_info" />
+        </receiver>
+
+        <service
+            android:name=".widgets.topratedmovies.TopRatedMoviesWidgetRemoteViewsService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <!-- Declare "Movie Details" widget here -->
 
