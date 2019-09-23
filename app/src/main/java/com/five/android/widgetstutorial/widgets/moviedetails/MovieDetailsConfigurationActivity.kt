@@ -32,8 +32,8 @@ class MovieDetailsConfigurationActivity: AppCompatActivity() {
     private var adapter =
         MoviesAdapter(this, this::onMovieSelected)
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_details_widget_configuration)
     }
 
