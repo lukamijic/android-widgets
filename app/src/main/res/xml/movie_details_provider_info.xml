@@ -8,5 +8,6 @@
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="86400000"
     android:configure="com.five.android.widgetstutorial.widgets.moviedetails.MovieDetailsConfigurationActivity"
+    android:previewImage="@drawable/movie_details_widget_preview"
     android:widgetCategory="home_screen">
 </appwidget-provider>

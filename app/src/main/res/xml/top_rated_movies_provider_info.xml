@@ -6,4 +6,5 @@
     android:minHeight="180dp"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="86400000"
+    android:previewImage="@drawable/top_rated_movies_widget_preview"
     android:widgetCategory="home_screen"/>
