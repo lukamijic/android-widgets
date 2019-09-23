@@ -39,7 +39,7 @@ class TopRatedMoviesWidgetRemoteViewsFactory(private val context: Context): Remo
     override fun getItemId(position: Int): Long = topRatedMovies[position].movieId.toLong()
 
     override fun onDataSetChanged() {
-        topRatedMovies = getTopRatedMoviesUseCase.execute().blockingGet()
+        topRatedMovies = getTopRatedMoviesUseCase.execute().blockingGet().shuffled()
     }
 
     override fun hasStableIds(): Boolean = true
